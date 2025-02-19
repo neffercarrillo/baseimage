@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+podman build --build-arg USERNAME=$(whoami) -t baseimage -f Containerfile
