@@ -33,21 +33,6 @@ WORKDIR /home/${USERNAME}
 # Switch to non-root user
 USER ${USERNAME}
 
-# Create workspace dir
-RUN mkdir -p /home/${USERNAME}/workspace/repos/github/neffercarrillo/
-
-# Switch to github dir
-WORKDIR /home/${USERNAME}/workspace/repos/github/neffercarrillo/
-
-# Get dotfiles from github
-RUN git clone https://github.com/neffercarrillo/dotfiles.git
-
-# Get into dotfiles
-WORKDIR /home/${USERNAME}/workspace/repos/github/neffercarrillo/dotfiles
-
-# Setup dotfiles
-RUN perl setup
-
 # Switch to user's home directory
 WORKDIR /home/${USERNAME}
 
