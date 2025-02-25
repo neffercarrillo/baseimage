@@ -36,5 +36,8 @@ USER ${USERNAME}
 # Switch to user's home directory
 WORKDIR /home/${USERNAME}
 
+# Create workspace dir
+RUN mkdir -p /home/${USERNAME}/workspace
+
 # Default command: Start a Bash shell
 CMD ["bash", "-l"]
