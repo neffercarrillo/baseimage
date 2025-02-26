@@ -39,8 +39,5 @@ WORKDIR /home/${USERNAME}
 # Create workspace dir
 RUN mkdir -p /home/${USERNAME}/workspace
 
-# Start emacs daemon
-CMD ["/usr/bin/emacs","--daemon"]
-
-# Default command: Start a Bash shell
-CMD ["bash", "-l"]
+# Start emacs daemon and bash
+CMD emacs --daemon && bash --login
